@@ -1,6 +1,8 @@
 class Restaurant < ApplicationRecord
-  validates :name, presence: true
-  validates :address, presence: true
-  validates :number_of_seats, presence: true
-  validates :type, presence: true
+  validates_presence_of :name
+  validates_presence_of :address
+  validates_presence_of :number_of_seats
+  validates_presence_of :type
+
+  mount_uploader :image, ImageUploader
 end
